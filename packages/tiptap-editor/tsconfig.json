@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["DOM", "ES2020"],
+    "skipLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+     "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "tiptap-editor-component": ["../../packages/tiptap-editor/dist"]
+    },
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "**/*.test.tsx", "**/*.spec.tsx"]
+}
