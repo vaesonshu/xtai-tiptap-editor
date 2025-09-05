@@ -35,7 +35,7 @@ export function TiptapEditor({
   useEffect(() => () => editor?.destroy(), [editor])
 
   return (
-    <div className="border rounded-lg bg-red-200">
+    <div className="border rounded-lg border-green-500 bg-amber-50">
       <Toolbar editor={editor} customToolbar={customToolbar} />
       <div className="p-2">
         <EditorContent editor={editor} />

@@ -12,7 +12,7 @@ export function Toolbar({ editor, customToolbar }: ToolbarProps) {
   if (!editor) return null
 
   return (
-    <div className="flex space-x-2 border-b p-2 bg-amber-200">
+    <div className="flex space-x-2 border-b p-2">
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
         className={editor.isActive('bold') ? 'font-bold text-blue-600' : ''}

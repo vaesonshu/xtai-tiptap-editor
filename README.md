@@ -4,7 +4,7 @@
 本仓库采用 **pnpm workspace + monorepo** 架构，包含：
 
 * `packages/tiptap-editor` → 编辑器组件（npm 包）
-* `apps/demo` → Next.js 演示项目
+* `apps/my-app` → Next.js 演示项目
 * `apps/docs` → 文档网站
 
 ---
@@ -14,7 +14,7 @@
 ```
 tiptap-editor-monorepo/
 ├── apps/
-│   ├── demo/                  # Next.js 演示项目
+│   ├── my-app/                  # Next.js 演示项目
 │   └── docs/                  # 文档网站 (Next.js/MDX)
 ├── packages/
 │   └── tiptap-editor/         # 编辑器组件 (核心逻辑)
@@ -38,10 +38,10 @@ tiptap-editor-monorepo/
 pnpm install
 ```
 
-### 2. 启动 demo 项目
+### 2. 启动 my-app 项目
 
 ```bash
-pnpm --filter demo dev
+pnpm --filter my-app dev
 ```
 
 默认在 `http://localhost:3000` 启动演示站点。
@@ -64,10 +64,10 @@ pnpm --filter tiptap-editor-component build
 
 ## 📥 添加依赖
 
-### 给 demo 添加依赖
+### 给 my-app 添加依赖
 
 ```bash
-pnpm --filter demo add axios
+pnpm --filter my-app add axios
 ```
 
 ### 给组件包添加依赖
@@ -105,10 +105,10 @@ pnpm --filter tiptap-editor-component add @tiptap/extension-highlight
 | 目的          | 命令                                             |
 | ----------- | ---------------------------------------------- |
 | 安装所有依赖      | `pnpm install`                                 |
-| 启动 demo     | `pnpm --filter demo dev`                       |
+| 启动 my-app     | `pnpm --filter my-app dev`                       |
 | 启动 docs     | `pnpm --filter docs dev`                       |
 | 构建组件包       | `pnpm --filter tiptap-editor-component build`  |
-| 给 demo 添加依赖 | `pnpm --filter demo add 包名`                    |
+| 给 my-app 添加依赖 | `pnpm --filter my-app add 包名`                    |
 | 给组件包添加依赖    | `pnpm --filter tiptap-editor-component add 包名` |
 | 清理依赖缓存      | `pnpm store prune`                             |
 
@@ -116,10 +116,10 @@ pnpm --filter tiptap-editor-component add @tiptap/extension-highlight
 
 ## 🏪开发流程
 
-### 1. 启动 demo 项目 (Next.js)
+### 1. 启动 my-app 项目 (Next.js)
 
 ```bash
-pnpm --filter demo dev
+pnpm --filter my-app dev
 ```
 
 ### 2. 同时监听组件包变化
