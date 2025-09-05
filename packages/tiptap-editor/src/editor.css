@@ -1,0 +1,6 @@
+@import "tailwindcss"
+
+/* 可加额外样式 */
+.editor {
+  @apply border rounded-md p-4 min-h-[200px];
+}

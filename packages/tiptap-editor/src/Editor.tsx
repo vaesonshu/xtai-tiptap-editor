@@ -4,6 +4,7 @@ import { useEditor, EditorContent, type EditorOptions, type Extensions } from '@
 import StarterKit from '@tiptap/starter-kit'
 import { useEffect, ReactNode } from 'react'
 import { Toolbar } from './Toolbar'
+import './editor.css'
 
 export interface TiptapEditorProps {
   content?: string
@@ -28,13 +29,13 @@ export function TiptapEditor({
     editable,
     onUpdate: ({ editor }) => onChange?.(editor.getHTML()),
     ...editorOptions,
-    immediatelyRender: false
+    immediatelyRender: false,
   })
 
   useEffect(() => () => editor?.destroy(), [editor])
 
   return (
-    <div className="border rounded-lg">
+    <div className="border rounded-lg bg-red-200">
       <Toolbar editor={editor} customToolbar={customToolbar} />
       <div className="p-2">
         <EditorContent editor={editor} />
