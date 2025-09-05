@@ -18,8 +18,13 @@ tiptap-editor-monorepo/
 │   └── docs/                  # 文档网站 (Next.js/MDX)
 ├── packages/
 │   └── tiptap-editor/         # 编辑器组件 (核心逻辑)
+├── .eslintrc.json             # ESLint 配置
+├── .gitignore                 # Git 忽略文件 
+├── .prettierrc                # Prettier 配置
 ├── package.json               # 根目录管理脚本 & devDeps
+├── pnpm-lock.yaml             # pnpm 锁文件
 ├── pnpm-workspace.yaml        # pnpm workspace 配置
+├── README.md                   # 仓库描述
 └── ...
 ```
 
@@ -109,13 +114,16 @@ pnpm --filter tiptap-editor-component add @tiptap/extension-highlight
 
 ---
 
-## 开发流程
+## 🏪开发流程
 
-# 启动 demo 项目 (Next.js)
+### 1. 启动 demo 项目 (Next.js)
+
+```bash
 pnpm --filter demo dev
+```
 
-# 启动 docs 项目 (文档)
-pnpm --filter docs dev
+### 2. 同时监听组件包变化
 
-# 同时监听组件包变化
+```bash
 pnpm --filter tiptap-editor-component dev
+```
