@@ -8,6 +8,8 @@ import { useState } from 'react'
 export default function Page() {
   const [content, setContent] = useState('<p>Hello Turborepo!</p>')
 
+  console.log('Content:', content)
+
   return (
     <div className="p-4">
       <TiptapEditor

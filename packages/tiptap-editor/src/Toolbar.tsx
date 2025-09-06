@@ -2,6 +2,7 @@
 
 import { Editor } from '@tiptap/react'
 import { ReactNode } from 'react'
+import { Button } from '@/components/ui/button'
 
 interface ToolbarProps {
   editor: Editor | null
@@ -12,13 +13,14 @@ export function Toolbar({ editor, customToolbar }: ToolbarProps) {
   if (!editor) return null
 
   return (
-    <div className="flex space-x-2 border-b p-2">
-      <button
+    <div className="flex space-x-2 border-b p-2 cursor-pointer">
+      <Button
+        variant="outline"
         onClick={() => editor.chain().focus().toggleBold().run()}
         className={editor.isActive('bold') ? 'font-bold text-blue-600' : ''}
       >
         Bold
-      </button>
+      </Button>
       <button
         onClick={() => editor.chain().focus().toggleItalic().run()}
         className={editor.isActive('italic') ? 'italic text-blue-600' : ''}

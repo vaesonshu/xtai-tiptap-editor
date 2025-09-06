@@ -14,7 +14,6 @@
      "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "tiptap-editor-component": ["../../packages/tiptap-editor/dist"]
     },
   },
   "include": ["src"],
