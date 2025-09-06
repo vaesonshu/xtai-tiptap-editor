@@ -3,6 +3,9 @@
 import { Editor } from '@tiptap/react'
 import { ReactNode } from 'react'
 import { Button } from '@/components/ui/button'
+import BasicMenu from '@/components/meun/basic-menu'
+import EmojiMenu from '@/components/meun/emoji-menu'
+import { Separator } from '@/components/ui/separator'
 
 interface ToolbarProps {
   editor: Editor | null
@@ -13,32 +16,12 @@ export function Toolbar({ editor, customToolbar }: ToolbarProps) {
   if (!editor) return null
 
   return (
-    <div className="flex space-x-2 border-b p-2 cursor-pointer">
-      <Button
-        variant="outline"
-        onClick={() => editor.chain().focus().toggleBold().run()}
-        className={editor.isActive('bold') ? 'font-bold text-blue-600' : ''}
-      >
-        Bold
-      </Button>
-      <button
-        onClick={() => editor.chain().focus().toggleItalic().run()}
-        className={editor.isActive('italic') ? 'italic text-blue-600' : ''}
-      >
-        Italic
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleStrike().run()}
-        className={editor.isActive('strike') ? 'line-through text-blue-600' : ''}
-      >
-        Strike
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-        className={editor.isActive('codeBlock') ? 'bg-gray-200 px-1 rounded' : ''}
-      >
-        Code
-      </button>
+    <div className="flex space-x-2 border-b p-2 cursor-pointer bg-white shadow-sm">
+      {/* 基本 */}
+      <BasicMenu editor={editor} />
+      <Separator orientation="vertical" className="m-1 h-auto" />
+      {/* 表情 */}
+      <EmojiMenu editor={editor} />
       {customToolbar && <div className="ml-4">{customToolbar(editor)}</div>}
     </div>
   )

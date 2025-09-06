@@ -12,14 +12,7 @@ export default function Page() {
 
   return (
     <div className="p-4">
-      <TiptapEditor
-        content={content}
-        onChange={setContent}
-        extensions={[StarterKit]}
-        customToolbar={(editor) => (
-          <button onClick={() => editor.chain().focus().insertContent('😎').run()}>Add Emoji</button>
-        )}
-      />
+      <TiptapEditor content={content} onChange={setContent} extensions={[StarterKit]} />
       <div className="mt-4 border p-2 bg-amber-200">
         <strong>Preview:</strong>
         <div dangerouslySetInnerHTML={{ __html: content }} />
