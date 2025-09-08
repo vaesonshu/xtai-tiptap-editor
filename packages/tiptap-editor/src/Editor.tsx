@@ -5,6 +5,7 @@ import { useEffect, ReactNode } from 'react'
 import { Toolbar } from './Toolbar'
 import { tipTapExtensions } from '@/extensions'
 import StarterKit from '@tiptap/starter-kit'
+import { TooltipProvider } from '@/components/ui/tooltip'
 
 import './editor.css'
 
@@ -39,11 +40,13 @@ export function TiptapEditor({
   useEffect(() => () => editor?.destroy(), [editor])
 
   return (
-    <div className="border">
-      <Toolbar editor={editor} customToolbar={customToolbar} />
-      <div className="p-2">
-        <EditorContent editor={editor} />
+    <TooltipProvider>
+      <div className="border">
+        <Toolbar editor={editor} customToolbar={customToolbar} />
+        <div className="p-2">
+          <EditorContent editor={editor} />
+        </div>
       </div>
-    </div>
+    </TooltipProvider>
   )
 }
